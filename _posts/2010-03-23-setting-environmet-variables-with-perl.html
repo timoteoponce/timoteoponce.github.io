@@ -1,0 +1,14 @@
+---
+layout: post
+title: Setting environment variables with perl
+date: '2010-03-23T15:33:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- perl
+- script
+modified_time: '2010-03-23T15:34:24.720-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-2318662092748436681
+blogger_orig_url: https://timoponce.blogspot.com/2010/03/setting-environmet-variables-with-perl.html
+---
+
+Usually I work with different environments on different projects, this means that sometimes I have to change system variables and references in order to work in a different project. To avoid this repetitive task, I've created a few <a href="http://en.wikipedia.org/wiki/Perl">PERL</a> scripts to make my life easier.<br /><br /><h3>Changing environment variables</h3>What I did was to create a script that receives as a parameter a file name, this file contains a set of environment variables to set. To make it even easier, the file has the format:<br /><pre class="py" name="code">KEY<br />VALUE<br /></pre>Like this:<br /><pre class="py" name="code">JAVA_HOME <br />/opt/java/jdk1.6.0_12<br />JBOSS_HOME<br />/opt/java/4.2.3.GA/jboss-as\<br /></pre>Note: I still don't know a lot of <a href="http://en.wikipedia.org/wiki/Perl">PERL</a>.<br /><br />Script(file: my_setenv.pl ):<br /><pre class="py" name="code">$filename = $ARGV[0];<br />print "Using filename $filename";<br /><br />open FILE, "$filename" or die $!;<br /><br />$iterator = 0;<br />$current_var = "";<br />while (my $line = <file>) {<br /><br /> if( $iterator == 0 ){<br />  $current_var = $line;<br />  $iterator++;<br /> }else{<br />  print "Setting ENV -&gt; $current_var = $line";<br />  $ENV{"$current_var"} = $line;  <br />  $current_var = "";<br />  $iterator = 0;<br /> }<br />}<br />close(FILE); <br /><br />print "Let's show all ENVIRONMENT variables.\n";<br />foreach $key (keys(%ENV)) {<br />    printf("%-10.10s: $ENV{$key}\n", $key);<br />}<br /></pre>Usage:<br /><pre class="py" name="code">$&gt; perl my_setenv.pl google_code_env.env<br /></pre><br />That's all.

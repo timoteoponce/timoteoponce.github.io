@@ -1,0 +1,15 @@
+---
+layout: post
+title: Interacción con JMS
+date: '2010-01-29T07:10:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- jms
+- uml
+modified_time: '2010-02-01T09:39:07.403-08:00'
+thumbnail: http://4.bp.blogspot.com/_KIIvcCa3NIc/S2L6IqqhcuI/AAAAAAAAAEI/KBJ7AzWWGyI/s72-c/main.png
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-5549148871303475774
+blogger_orig_url: https://timoponce.blogspot.com/2010/01/interaccion-con-jms.html
+---
+
+Java Messaging Service es un middleware de comunicación a través de mensajes para Java muy utilizado a nivel mundial, con estandares definidos y varios proveedores.<br /><br />Actualmente, yo requería utilizar múltiples proveedores de JMS en una aplicacion, entonces para no estar creando implementaciones independientes para cada tipo de proveedor, decidi hacer una interfaz que utilice los estandares JMS y me permita implementar mis clases de forma transparente al proveedor JMS, este es un diagrama de clase de mi diseño:<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"></div><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/_KIIvcCa3NIc/S2L6IqqhcuI/AAAAAAAAAEI/KBJ7AzWWGyI/s1600-h/main.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="325" src="http://4.bp.blogspot.com/_KIIvcCa3NIc/S2L6IqqhcuI/AAAAAAAAAEI/KBJ7AzWWGyI/s400/main.png" width="400" /> </a></div><div class="separator" style="clear: both; text-align: left;"><br />Patrones de diseño utilizados:</div><ul><li><a href="http://es.wikipedia.org/wiki/Strategy_%28patr%C3%B3n_de_dise%C3%B1o%29">Strategy </a></li></ul>

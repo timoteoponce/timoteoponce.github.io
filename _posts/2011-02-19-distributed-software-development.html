@@ -1,0 +1,15 @@
+---
+layout: post
+title: Distributed software development
+date: '2011-02-19T12:12:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- databases
+- development
+- java
+modified_time: '2019-08-16T06:05:40.471-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-8569211074292836301
+blogger_orig_url: https://timoponce.blogspot.com/2011/02/distributed-software-development.html
+---
+
+<div class="separator" style="clear: both; text-align: left;">As you have seen through the entries of this blog, I'm a distributed-stuff fanatic. I really think that the future of software development is closely related with this concept.</div><br /><br />Many problems arise when you are working in a project that involves more than 2 developers, and the problems are even worst if new developers are included into the development process. It's a mess.<br /><br />But you can make it work if you follow a simple goal: Every developer should be able to do whatever he wants without bothering anybody else.<br /><br />This is very important when you are working in a database-based application, if several developers test their applications against a central database, you will have inconsistency problems in a matter of minutes.<br /><br />I have worked in projects where this kind of problems arose more than once every day, it's a complete mess when testing and even worst when you are trying to integrate the work.<br /><br />But not everything is bad here, I have also worked in projects where everything was meant to be distributed. Working with local databases such as <a href="http://www.h2database.com/">H2 </a>and versioning tool like <a href="http://mercurial.selenic.com/">HG</a> or <a href="http://www.git-scm.com/">GIT</a>. It's a big difference to be able to test all your changes without messing with other people data.<br /><br />If you are working in a project with 2 or more developers, configure the project to be self-sufficient in all senses: Database, compilation, deployment, execution, tests.<br /><br />Your development process will be shorter and the integration problems will be reduced, I can assure you that.

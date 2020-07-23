@@ -1,0 +1,16 @@
+---
+layout: post
+title: DAO - Data Access Object en Java - primera parte
+date: '2010-01-16T18:43:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- dao
+- patrones
+- diseño
+- java
+modified_time: '2010-01-17T19:03:57.922-08:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-2219701310946210151
+blogger_orig_url: https://timoponce.blogspot.com/2010/01/dao-data-access-object-en-java-primera.html
+---
+
+El patrón de diseño <a href="http://es.wikipedia.org/wiki/Data_Access_Object">DAO</a> facilita el acceso a fuentes de datos a través de elementos transitorios denominados "transfer objects", estos objectos no son mas que simples clases. Una gran ventaja de este patrón, es de la separación exclusiva de las tareas de acceso de datos, dejando a los demas componentes involucrados hacer su trabajo de forma transparente.<br /><br />Pueden revisar una introducción muy completa en: <a href="http://sherekan.com.ar/category/patrones-de-diseno/">Patrones de diseño</a>.<br /><br />El artículo enlazado arriba es muy completo, no pretendo repetir lo que ahi indica, solamente agregar ciertos comentarios y modificaciones a las implementaciones de ejemplo.<br /><br /><br />Debido a que los objetos <a href="http://es.wikipedia.org/wiki/Data_Access_Object">DAO</a> proveen operaciones <a href="http://es.wikipedia.org/wiki/CRUD">CRUD</a> comunes, no es necesario escribir las operaciones en las interfaces de cada uno de los DAOs, por ejemplo:<br /><br /><textarea class="java" cols="60" name="code" rows="10"><br />public interface PersonDao{<br />void create(Person person);<br />Person read(Person person);<br />void update(Person person);<br />void delete(Person person);<br />}<br /><br />public interface PetDao{<br />void create(Pet pet);<br />Pet read(Pet pet);<br />void update(Pet pet);<br />void delete(Pet pet);<br />}<br /></textarea><br /><br />Seria muy engorroso hacer esto para cada entidad que manipulemos, pero podemos simplificar las cosas de esta forma:<br /><br /><textarea class="java" cols="60" name="code" rows="10"><br />public interface GenericDao<T>{<br />void create(T dto);<br />T read(T dto);<br />void update(T dto);<br />void delete(T dto);<br />}<br />public interface PersonDao extends GenericDao<Person>{<br />//custom operations<br />}<br /><br />public interface PetDao extends GenericDao<Pet>{<br />//custom operations<br />}<br /></textarea><br /><br />De esta forma, evitamos repetir la definicion de las operaciones (véa <a href="http://es.wikipedia.org/wiki/No_te_repitas">DRY</a>). <br /><br />Se puede hacer aún mas, utilizando clases abstractas, pero es algo que preferiría evitar, ... nunca me gustaron las herencias... pero tal vez para la segunda parte, nos vemos.

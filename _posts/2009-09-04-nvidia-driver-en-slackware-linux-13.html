@@ -1,0 +1,14 @@
+---
+layout: post
+title: Nvidia driver en Slackware Linux 13
+date: '2009-09-04T06:59:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- nvidia
+- slackware
+modified_time: '2009-10-18T15:05:33.428-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-6210455272968059806
+blogger_orig_url: https://timoponce.blogspot.com/2009/09/nvidia-driver-en-slackware-linux-13.html
+---
+
+Este mes se lanzó el release oficial de <a href="http://www.slackware.com/getslack/">Slackware 13</a>, la cual tiene muchos cambios con respecto a su anterior versión, el <a href="http://www.slackware.com/changelog/current.php?cpu=i386">changelog</a> brinda mas detalles sobre el asunto.<br /><br />Para probar la nueva 'distro', actualicé segun las indicaciones del UPGRADE.txt y todo fue perfecto, una de las cosas que noté es que ahora Xorg brinda un soporte básico(sin direct rendering) para las tarjetas NVIDIA. Al instalar el driver para mi tarjeta de video(GForce 5200), el servidor X no podía iniciar; luego de revisar varios logs y foros, encontré la solución(temporal, supongo).<br /><br />Solamente se debe agregar el siguiente parámetro al fichero '/etc/kde/kdm/kdmrc':<br /><blockquote>ServerCmd=/usr/bin/X -ignoreABI</blockquote> Ahora solamente inicien el sistema X con 'init 4' y todo perfecto.

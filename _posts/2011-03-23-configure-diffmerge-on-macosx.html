@@ -1,0 +1,15 @@
+---
+layout: post
+title: Configure DiffMerge on MacOSX
+date: '2011-03-23T07:13:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- git
+- diff
+- mac
+modified_time: '2011-07-15T11:17:38.669-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-3820515119444558925
+blogger_orig_url: https://timoponce.blogspot.com/2011/03/configure-diffmerge-on-macosx.html
+---
+
+Based on <a href="http://www.andrejkoelewijn.com/wp/2010/01/08/configure-diffmerge-with-git/">this article</a>, I modified it a little bit in order to make it work on Mac:<br /><br /><pre class="py" name="code" cols="150">[diff]   tool=diffmerge                                                                                                                   <br />[difftool "diffmerge"]                                                                                                                      <br />  cmd = exec /Applications/DiffMerge.app/Contents/MacOS/DiffMerge \"$LOCAL\" \"$REMOTE\"                                                                                                                                   <br />[merge]                                                                                                                                     <br />  tool = diffmerge                                                                                                                    <br />[mergetool "diffmerge"]                                                                                                                            <br />  cmd = exec /Applications/DiffMerge.app/Contents/MacOS/DiffMerge --merge --result=\"$MERGED\"\n\"$LOCAL\" \"$BASE\" \"$REMOTE\"                                                                                           <br />  trustexitcode = false     <br /></pre>

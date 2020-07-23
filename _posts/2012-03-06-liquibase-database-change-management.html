@@ -1,0 +1,18 @@
+---
+layout: post
+title: 'Liquibase: Database change management'
+date: '2012-03-06T10:47:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- patterns
+- databases
+- configuration
+- development
+- managemente
+- java
+modified_time: '2019-08-16T05:46:24.201-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-3238272592944324954
+blogger_orig_url: https://timoponce.blogspot.com/2012/03/liquibase-database-change-management.html
+---
+
+When you are developing an application, is almost sure that you will have to deal with a relational database system. And if you are developing with a 'refactoring' point of view, your database structure will change from time to time.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><br />In many situations these changes have to be tracked and automatically applied for the different environments (development, integration, production) and I bet you are currently doing that manually, updating scripts and wiping databases back and forth.<br /><br />This is no longer the case for me, a while ago I started using <a href="http://www.dbunit.org/">DBUnit</a> for managing my database data changes, but as the development moved forward, the database structure changed as well. So we started looking for a tool that could simplify our lives.<br /><br />Guess where we found it, in the<a href="http://www.dbunit.org/faq.html"> DBUnit FAQ page</a>, they even recommend it!. The tool is <a href="http://www.liquibase.org/">Liquibase</a>, a java-based application that uses XML changesets to handle the database modifications, it works smoothly and support almost all productive database systems.   It might be a little bit hard in the beginning, but it is worth it.

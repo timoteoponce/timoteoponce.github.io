@@ -1,0 +1,16 @@
+---
+layout: post
+title: Ruby disappointment
+date: '2012-06-23T20:26:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- ruby
+- software
+- development
+- java
+modified_time: '2012-06-23T20:26:56.960-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-2740536100497480155
+blogger_orig_url: https://timoponce.blogspot.com/2012/06/ruby-disappointment.html
+---
+
+I have been trying to port some work I've done in Java to Ruby, to see how it looks and how much code it would take. But in the way I found out that Ruby might not be the best option for this kind of situations.<br /><br />Let me explain it, this is my pseudo code:<br /><br /><br /><script src="https://gist.github.com/2981348.js?file=OrderSet.groovy"></script><br />As you can see, the OrderSet has a collection of Order classes, but classes!! Not instances, because in the real application I will have hundred of Orders and I don't want to instantiate a new object for each one of them.<br /><br />So to keep the memory load very low I handle classes, in that way I can control them, instantiate them and destroy them as much as I want.<br /><br />Now, I tried to write it in Ruby, but I found out that there's no easy way to add metadata at a class level!!<br />The closest approach to it that I could find is instance-oriented. I would need a new instance of every Order to make it work....sad.<br /><br /><ul><li><a href="http://stackoverflow.com/questions/3157426/how-to-simulate-java-like-annotations-in-ruby">Annotations simulation in Ruby</a> </li></ul>

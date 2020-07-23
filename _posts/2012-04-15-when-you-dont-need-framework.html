@@ -1,0 +1,22 @@
+---
+layout: post
+title: When you don't need a framework
+date: '2012-04-15T17:59:00.001-07:00'
+author: Timoteo Ponce
+tags:
+- patterns
+- programming
+- design
+- management
+- configuration
+- dependency
+- development
+- framework
+- uncle bob
+- software engineering
+modified_time: '2012-04-15T19:07:22.115-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-4688705699341051206
+blogger_orig_url: https://timoponce.blogspot.com/2012/04/when-you-dont-need-framework.html
+---
+
+I've been developing applications for a short time, from small to medium size codebases with many different features, requirements and environments. For all these applications I've always found the issue about the frameworks, sometimes this discussion takes days, or even weeks if the people involved is very passionate about <a href="http://rubyonrails.org/">Rails</a>, <a href="http://www.hibernate.org/">Hibernate</a>, JSF, CDI, and some others.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://under30ceo.com/wp-content/uploads/2011/07/confused-man-in-suit-e1311025659560.jpg" imageanchor="1" style="clear: right; float: right; margin-bottom: 1em; margin-left: 1em;"><img border="0" height="320" src="http://under30ceo.com/wp-content/uploads/2011/07/confused-man-in-suit-e1311025659560.jpg" width="266" /></a></div><div style="text-align: justify;">Mostly the discussions tend to be related to the benefits a framework can give us: speed, conventions, less coding, design improvements, being cool....</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">And for some projects the right frameworks have been a blessing, improving the developer experience and reducing development effort. But that's not always the case, because sometimes the frameworks can lead you to think that 'their' way to do it is the 'right' way.</div><div style="text-align: justify;"><br /></div><div style="text-align: justify;">'Their' way to do it can be 'right' for their intentions, but your application is not meant to be based on their intentions, but your customer ones. A framework should not define how your application is structured, how your business logic is wired, and not even how your tests are written.</div><br />I've always struggled with testing on a framework, because most of the times the requirements for its setup are so large, that makes you feel sick. And it's even worse if you are tied to certain technology because your customer has bought the 'sweetest' license in the market.<br /><br />But well, here's my summary about frameworks:<br /><h4>   Advantages </h4><ul><li>Speed, not always, but a lot of frameworks are performance-oriented.</li><li>Support, if it's open source, you will have a lot of it.</li><li><a href="http://en.wikipedia.org/wiki/Dry">DRY</a>, yeah, you don't reinvent the wheel.</li><li><a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention over configuration</a>, very powerful, and saves lots of efforts. </li></ul><h4>   Disadvantages</h4><ul><li>With bad design decisions, you can marry your code with a framework, and that marriage is an ugly one</li><li>Performance, as said, <a href="http://www.infoq.com/articles/Rails-Performance">not all frameworks are performance-oriented</a>.</li><li>Test difficulty, you mean that I have to setup the entire framework stack in order to test a single operation?</li></ul><h4>   When to use them</h4><ul><li>&nbsp;It's rare to find a reason not to use a framework, I would say that the question is not 'when to use a framework?', but 'how my application should be designed in order to be framework-agnostic?'.</li></ul><h4>   When not to use them, or at least think twice before using them</h4><ul><li>When its usage doesn't give you any advantages</li><li>When you have a 'contractual' boundary with it</li><li>When your team dislikes it</li><li>When your tests take more than 10 seconds to setup its environment</li><li>When the framework itself is untestable</li></ul>Based on: <a href="http://www.confreaks.com/videos/759-rubymidwest2011-keynote-architecture-the-lost-years">Architecture, the lost years - Robert C. Martin</a><br /><ul></ul>

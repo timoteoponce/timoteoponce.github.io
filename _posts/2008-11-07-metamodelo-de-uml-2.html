@@ -1,0 +1,14 @@
+---
+layout: post
+title: Metamodelo de UML 2
+date: '2008-11-07T15:05:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- metamodelo
+- uml
+modified_time: '2009-10-18T15:06:40.079-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-11927701954852980
+blogger_orig_url: https://timoponce.blogspot.com/2008/11/metamodelo-de-uml-2.html
+---
+
+UML fue propuesto de forma paralela a MOF, debido a que la OMG, una organizacion que define estándares, publicó una solicitud halla por los noventa.<br /><br />La solicitud fue para dos cosas, un lenguaje para definir estructuras( ver metalenguaje), y un lenguaje de modelado de propoósito general.<br /><br />La repuesta para ambos fue UML, desde IBM, Rational , y un par de decenas de compañias.<br /><br />UML en si es un lenguaje, por tanto puede interpretarse y validarse, la contraparte fue MOF, un "lenguaje" para definir estructuras u otros lenguajes, que a su vez esta definido en UML, en el UML Profile for MOF.<br /><br />Ahora, que tal si quiero programar en MOF o sobre UML(no modelar UML, sino programar con UML), hace poco la solucion a esto era implementar MOF o UML( que son muy similares).<br /><br />Esto era lento y propenso a errores, entonces la OMG publico una libreria que contiene la definicion completa de UML en Java, utilizando las potentes interfaces.<br /><br />Esta libreria define lo que cada elemento dentro de UML deberia poder hacer, sus herencias, características y métodos. Entonces solamente debemos implementar estas interfaces, pero esto tambien es tedioso; la solucion a todos nuestros problemas es MDR(Metadata Repository) de Netbeans, que es un repositorio de datos que puede realizar la implementacion de metamodelos, que cosa no?.<br /><br />Continuara...

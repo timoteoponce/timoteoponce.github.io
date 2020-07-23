@@ -1,0 +1,18 @@
+---
+layout: post
+title: User-safe system configurations
+date: '2012-09-09T19:14:00.001-07:00'
+author: Timoteo Ponce
+tags:
+- databases
+- ubuntu
+- configuration
+- safety
+- dcvs
+- diff
+modified_time: '2019-08-16T05:38:45.334-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-8539746517769079579
+blogger_orig_url: https://timoponce.blogspot.com/2012/09/user-safe-system-configurations.html
+---
+
+<br /><div class="separator" style="clear: both; text-align: center;"></div><br />As a developer and Linux-user, I continuously change several configurations in my systems, some of the changes can include:<br /><ul><li>Port-based services: When you have several web servers working on the same machine, you have to configure ports and alias addresses.</li><li>Package sources: I just don't want to mess my apt-get and slapt-get sources configuration.</li><li>Security: External services configuration, security configurations and system restrictions.</li><li>Run levels: I like to have the services I use at system startup, the other ones can burn in hell...</li><li>Networks: I have some static configurations for some environments.</li><li>X11: For some custom modifications I made for several displays.</li><li>Databases: Sources, ports, users and some other configurations.</li><li>Cron: Some backup and maintenance jobs.</li><li><a href="http://en.wikipedia.org/wiki/Revision_control">Revision control systems</a>: Common filters, aliases, etc.</li></ul>As you see, there are several configurations on my system, and I don't like to change them when a package gets updated, or when I upgrade my system. My usual alternative was to keep an .orig file for everything I was going to modify, but that didn't work very well, since I modified those files several times.<br /><br />Because of the situation, I needed these things:<br /><ol><li>Keep snapshots of my configuration files.</li><li>Rollback changes.</li><li>Restore old configurations.</li><li>Check which files/lines where changed.</li><li>Use it all from the shell.</li></ol>So, long story short, I needed a <a href="http://en.wikipedia.org/wiki/Revision_control">Revision Control System</a>. And as I needed it just my local machines, I reduced my choice to <a href="http://git-scm.com/">Git</a> and <a href="http://mercurial.selenic.com/">Mercurial</a>.<br /><br />My choice? Git, it is obvious that its shell interfaces are superior compared with Mercurial, it's very well integrated with all UNIXes and I have been working with it for a long time.<br /><br />So, whenever I want to check if a configuration has been changed:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#&gt; git status</span><br /><br />What about reverting a change?<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#&gt; git reset -HEAD <changed_file></changed_file></span><br /><br />And if I want to restore it to its initial version?<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#&gt;git reset <initial_commit> <changed_file></changed_file></initial_commit></span><br /><br />I just modified a bunch of files, save a snapshot of them:<br /><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#&gt; git ls-files --modified | xargs git add</span><br /><span style="font-family: &quot;courier new&quot; , &quot;courier&quot; , monospace;">#&gt; git commit -m "Too much work and no fun makes Jack a dull boy..." </span>

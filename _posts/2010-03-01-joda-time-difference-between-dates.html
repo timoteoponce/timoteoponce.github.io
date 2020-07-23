@@ -1,0 +1,14 @@
+---
+layout: post
+title: Joda Time - Difference between dates
+date: '2010-03-01T06:17:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- programacion
+- java
+modified_time: '2016-07-18T10:15:26.790-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-570664120499687073
+blogger_orig_url: https://timoponce.blogspot.com/2010/03/joda-time-difference-between-dates.html
+---
+
+In order to calculate a difference between dates, I've found many problems:<br /><ul><li>Leap years.</li><li>Minute, seconds differences between months and years.</li><li>Months with different amount of days, etc.</li></ul>&nbsp;And I was not going to develop all this, right?. Somebody must have already done this, so, I started searching. The result was <a href="http://joda-time.sourceforge.net/">Joda-time</a>, a very handy library that is being used in projects like JBoss Seam.<br /><br />With this library, my work only was to use it, so, if I wanted to calculate date differences, I just have to:  <script src="https://gist.github.com/timoteoponce/7aa715c5a6d8fff4cfec0a72cb58e674.js"></script>

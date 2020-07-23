@@ -1,0 +1,19 @@
+---
+layout: post
+title: Metamodelo UML - 1
+date: '2008-09-12T15:14:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- modelo
+- metamodelo
+- booch
+- uml
+- jacobson
+- java
+modified_time: '2008-10-12T12:16:38.869-07:00'
+thumbnail: http://4.bp.blogspot.com/_KIIvcCa3NIc/SMrs8u71GVI/AAAAAAAAACY/lNetwsmwW0M/s72-c/multiple-inheritance-original.png
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-2677086276874404410
+blogger_orig_url: https://timoponce.blogspot.com/2008/09/metamodelo-uml-1.html
+---
+
+Como avance dentro de un proyecto de grado, me encuentro con <a href="http://es.wikipedia.org/wiki/Uml">UML(Unified Modelling Language)</a>, este famoso y conocidísimo lenguaje de modelado definido por los grandes de los procesos de desarrollo del software.<br /><br />Pero, ¿qué es UML?, UML es una convención para modelar( visualizar, diseñar, especificar, documentar) algun elemento del mundo real, esa es la definicion de modelado, UML esta orientado hacia el desarrollo de software, aunque eso no quiera decir que solo se pueda usar para esto.<br /><br />Perfecto entonces, es algo que me permite modelar, ¿pero como?.<br /><br />UML define un conjunto de elementos que permiten el modelado, llamados diagramas. Existen diagramas de todo tipo, que tienen un objetivo específico y diferentes características propias.<br /><br />Ahora mi problema es que debía definir UML en un lenguaje de programación, es decir, crear la estructura para modelor. Esto es algo interesante, ya que UML esta definido en UML !!.<br /><br />Algo extraño, no?.  Esto es llamado metamodelo, un metamodelo es un modelo de un modelo, son datos de datos, son esquemas de esquemas.<br /><br />El metamodelo de UML se vería algo así:<br /><br /><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="http://4.bp.blogspot.com/_KIIvcCa3NIc/SMrs8u71GVI/AAAAAAAAACY/lNetwsmwW0M/s1600-h/multiple-inheritance-original.png"><img style="margin: 0px auto 10px; display: block; text-align: center; cursor: pointer;" src="http://4.bp.blogspot.com/_KIIvcCa3NIc/SMrs8u71GVI/AAAAAAAAACY/lNetwsmwW0M/s320/multiple-inheritance-original.png" alt="" id="BLOGGER_PHOTO_ID_5245265244161644882" border="0" /> </a>Semejante cosa es posible gracias <a style="font-style: italic;" href="http://en.wikipedia.org/wiki/Meta-Object_Facility"><span style="font-style: italic;">"</span>MOF</a><a href="http://en.wikipedia.org/wiki/Meta-Object_Facility"><span style="font-style: italic;"> Meta-Object_Facility"</span></a>, que es otra norma para definir esquemas o arquitecturas, fué creado específicamente para UML, pero sus beneficios son numerosos.<br /><br />Ahora como solo me interesan los diagramas de clase, una pequeña porción del UML, cada uno de estos elementos define la estructura del diagrama, sus elementos, operaciones y atributos.<br /><br />Entonces la solución es utilizar MDR Meta-Data Repository, un proyecto iniciado por Netbeans que maneja una implementación del metamodelo de UML, aunque eso por supuesto no es todo lo que puede hacer.<br /><br />Hasta aqui este post, más adelante seguiremos con este tema.

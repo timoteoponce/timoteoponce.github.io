@@ -1,0 +1,20 @@
+---
+layout: post
+title: Development tips
+date: '2012-08-05T16:29:00.003-07:00'
+author: Timoteo Ponce
+tags:
+- discipline
+- programming
+- code
+- management
+- tips
+- git
+- development
+- build
+modified_time: '2019-08-16T05:39:17.119-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-21526413816015235
+blogger_orig_url: https://timoponce.blogspot.com/2012/08/development-tips.html
+---
+
+I've worked in some projects so far and I learned some things that can save you a lot of time even if they sound very expensive. These tips are meant for small/medium size projects, perhaps you can apply them to big projects, but I'm not sure.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><ol><li><a href="http://git-scm.com/">Revision control system</a> from the beginning.</li><li>Define your <a href="http://www.extremeprogramming.org/rules/planninggame.html">goals and milestones</a>, even without dates.</li><li>Define what you are going to build, with <a href="http://en.wikipedia.org/wiki/Use_case">use cases</a> or <a href="http://en.wikipedia.org/wiki/User_story">user stories</a>, or just use whatever you feel comfortable with.</li><li>Define an architecture, don't go on without this. The architecture must define the form of the system, not the details.</li><li>Define the contexts you are going to be working on, this means that you have to separate your project into smaller micro-projects (if it applies).</li><li>Define your frameworks/libraries stack.</li><li>Define your project(s) structure, this involves folders and files.</li><li>Define your automated build scripts, something like <a href="http://www.gradle.org/">Gradle</a> would do it.</li><li>Think in the tests before the implementation, if it's testable, it's implementable.</li><li>Use continuous integration from the beginning.</li><li>Keep you source files small and readable.</li><li>Periodically check your system and update the architecture if some changes have been made.</li></ol>I omitted several things, but I consider these the most important from a developer's perspective.<br /><br />I didn't have this information at the beginning because I was too lazy to read about it, and had to learn it the hard way, by suffering the consequences...

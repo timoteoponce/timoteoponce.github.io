@@ -1,0 +1,18 @@
+---
+layout: post
+title: On Conventions
+date: '2014-06-21T10:14:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- jee
+- rails
+- configuration
+- convention
+- java
+modified_time: '2014-06-21T10:14:19.929-07:00'
+thumbnail: http://4.bp.blogspot.com/-5h3UqwVuuWE/U6W9G40fo0I/AAAAAAAABiY/0VyBUjtw8pk/s72-c/design_arquetype_01.png
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-731936551275206699
+blogger_orig_url: https://timoponce.blogspot.com/2014/06/on-conventions.html
+---
+
+A while ago I listened about <a href="http://twit.tv/show/floss-weekly/79">Ruby on Rails on a podcast (FLOSS Weekly-episode)</a>, in that conversation I heard many of the concepts that later on I would find in books, frameworks and projects.<br /><br />But among all design decisions mentioned there, <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention Over Configuration</a> was the one that triggered something in my head.<br /><br />In a short summary COC is a principle that describe a work approach in which most decisions in are defined by conventions and not by manual setups, such as URL-mapping in a web application, see <a href="http://guides.rubyonrails.org/routing.html">Rails RESTFul URLs</a>.<br /><br />Under my personal context (mainly Java and JVM-based development) over the years this trend has been used more and more, and I couldn't agree more. Frameworks are the main target for this, things like JEE-6/7, ORMs like Hibernate and Dependency Injection frameworks like Spring must define a 'default' way to work.<br /><br />Although it is really useful to have more than one alternative to do something, it becomes really hard to start with any of those frameworks. The greatest advantage (in my opinion) of some of the more trending frameworks like Rails or Django is the learning curve, very easy to learn, very easy to start, very easy to be productive.<br /><br />JEE in all its flavors and Hibernate are not the case for it (in my opinion), there is no standard nor default way of doing things. And because of that a big part of the development community has migrated to another option. It is very important for us as developers to be consistent, and the change has to start on the framework-makers, and JEE must be the starting point since there are so many applications based on it.<br /><br />So, how would JEE become a better alternative?:<br /><ul><li>Define a default build tool and stick with it</li><li>Define proper libraries in the repositories, no more broken APIs</li><li>Create a non-extensive guide with the basics to do a web application</li><li>Define a default open source deployment server</li><li>Provide a default architecture such as MVC</li></ul><div class="separator" style="clear: both; text-align: center;"><a href="http://4.bp.blogspot.com/-5h3UqwVuuWE/U6W9G40fo0I/AAAAAAAABiY/0VyBUjtw8pk/s1600/design_arquetype_01.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" src="http://4.bp.blogspot.com/-5h3UqwVuuWE/U6W9G40fo0I/AAAAAAAABiY/0VyBUjtw8pk/s1600/design_arquetype_01.png" height="256" width="320" /></a></div><div><br /></div><div>Some progress on it has been achieved with Maven archetypes and things like AppFuse, but I think we are still a little behind Rails in that matter, although, it's improving.</div>

@@ -1,0 +1,18 @@
+---
+layout: post
+title: Generic actions model
+date: '2012-05-15T19:34:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- patterns
+- programming
+- design
+- uml
+- software engineering
+modified_time: '2012-05-16T05:25:35.393-07:00'
+thumbnail: http://1.bp.blogspot.com/-Rs6mFpyNASw/T7MQbXNm1lI/AAAAAAAAAWY/hOHHf_E6_R4/s72-c/dependency_model.png
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-364314028712730894
+blogger_orig_url: https://timoponce.blogspot.com/2012/05/generic-actions-model.html
+---
+
+Have you ever tried to install something in a Linux distribution and have struggled with a dependency manager? such as <a href="http://en.wikipedia.org/wiki/Deb_%28file_format%29">DEB</a>, <a href="http://en.wikipedia.org/wiki/RPM_Package_Manager">RPM</a>, <a href="https://wiki.archlinux.org/index.php/Pacman">PACMAN</a>?<br /><br /><table align="center" cellpadding="0" cellspacing="0" class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;"><tbody><tr><td style="text-align: center;"><a href="http://upload.wikimedia.org/wikipedia/commons/7/79/Recurrent_ann_dependency_graph.png" imageanchor="1" style="margin-left: auto; margin-right: auto;"><img border="0" height="320" src="http://upload.wikimedia.org/wikipedia/commons/7/79/Recurrent_ann_dependency_graph.png" width="286" /></a></td></tr><tr><td class="tr-caption" style="text-align: center;">Dependency graph</td></tr></tbody></table><br /><br />I have a love/hate relationship with these models, sometimes they save my day, but some others are really, but really hard to deal with.<br /><br />In software development you will find such scenarios, where you have something to do, and that thing will require another thing... and so on.<br /><br />I mapped this model about a generic rule-dependency model:<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-Rs6mFpyNASw/T7MQbXNm1lI/AAAAAAAAAWY/hOHHf_E6_R4/s1600/dependency_model.png" imageanchor="1" style="margin-left: 1em; margin-right: 1em;"><img border="0" height="87" src="http://1.bp.blogspot.com/-Rs6mFpyNASw/T7MQbXNm1lI/AAAAAAAAAWY/hOHHf_E6_R4/s320/dependency_model.png" width="320" /></a></div><br /><ul><li>Action: Component doing some kind of work. All the dependencies are one-side oriente, and each dependency can have many other dependencies.</li><li>ActionsRepository: A collection of sorted actions by any kind of criteria. Normally not allowing duplicated actions.</li><li>ActionsExecutor: Component in charge of iterate and execute the actions.</li></ul>

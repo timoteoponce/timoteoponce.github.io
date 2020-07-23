@@ -1,0 +1,16 @@
+---
+layout: post
+title: Semantics and programming
+date: '2012-01-19T20:07:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- programming
+- design
+- development
+- java
+modified_time: '2012-01-20T04:14:27.677-08:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-8107172221120530563
+blogger_orig_url: https://timoponce.blogspot.com/2012/01/semantics-and-programming.html
+---
+
+After using the <a href="http://www.playframework.org/">Play framework</a> for a while, and reading several <a href="http://codemonkeyism.com/generation-java-programming-style/">good articles</a>, I started using some of the concepts that have been around the cloud for some time.<br /><br />One of them took my attention, the one claiming:<br /><div style="text-align: center;"><i>"Never use strings in Java"</i></div><br />Initially I found this really stupid, how can you program without strings?<br /><br />But after applying the concept for some months, it has showed me how wrong I was. Once you start coding with Objects, you are giving your operations a semantic meaning. This means that you can say by checking an operation identifier what it really does.<br /><br />It also simplifies the API definition, because the object talk by themselves. You will not be able to pass a null string as a parameter, instead you will create a class wrapping it, then the wrapper class is in charge of checking if the data you are using is valid.<br /><br />As I'm still digging into it, more posts will be written about the topic. Just as a suggestion, please take a look at it.<br /><br /><b>Resources</b>:<br /><ul><li><a href="http://codemonkeyism.com/never-never-never-use-string-in-java-or-at-least-less-often/">never-never-never-use-string-in-java-or-at-least-less-often</a></li><li><a href="http://codemonkeyism.com/generation-java-programming-style/">New programming style </a></li></ul>

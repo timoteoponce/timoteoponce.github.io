@@ -1,0 +1,15 @@
+---
+layout: post
+title: Slackware 13.1 - Nvidia driver issue
+date: '2010-05-29T11:05:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- nvidia
+- kernel
+- slackware
+modified_time: '2010-05-29T11:05:41.277-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-7356199466946962471
+blogger_orig_url: https://timoponce.blogspot.com/2010/05/slackware-131-nvidia-driver-issue.html
+---
+
+I've been installing the latest Slackware stable release on my main machine these days and I have to say, it's great!!!. Most of the problems of Slackware 13 are now solved, it's pretty stable and so far without exceptions!!.<br /><br /><br />But I found a problem not related to Slackware, there is a problem with the kernel series 2.6.33.x and Nvidia legacy drivers. In short, once the driver is installed, the 'logout' action freezes the system and the only way to restore it is restarting manually, tough.<br /><br />The solution, edit file '/etc/kde/kdm/kdmrc' and set:<br /><pre class="py" name="code"># by default is false<br />#TerminateServer=true <br />TerminateServer=true<br /></pre><br />Solution source: <a href="http://www.linuxquestions.org/questions/slackware-14/black-screen-after-logout-in-slackware-current-780540/">black-screen-after-logout-in-slackware</a>

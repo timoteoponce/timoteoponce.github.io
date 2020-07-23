@@ -1,0 +1,12 @@
+---
+layout: post
+title: Slapt-get, Slackware potenciado
+date: '2008-05-29T19:13:00.000-07:00'
+author: Timoteo Ponce
+tags:
+modified_time: '2008-05-29T19:30:43.372-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-2556860108038289299
+blogger_orig_url: https://timoponce.blogspot.com/2008/05/slapt-get-slackware-potenciado.html
+---
+
+Como se habran dado cuenta, soy un fanático de Slackware, la distro mas antigua de todas, que tiene otras características que ya se han discutido anteriormente.<br />Pero ahora me toca hablar de una herramienta muy potente, pero antes, muchos amigos son usuarios asiduos de Ubuntu y todas sus variantes, cada vez me tiran en cara la facilidad de su sistema de paquetes, basta con decir:<br /><blockquote>apt-get install aplicacion<br /></blockquote>En cambio, uno debia descargar los paquetes, buscar sus posibles dependencias, y luego instalar, lo cual es simple en lo simple, y complejo en lo opuesto. Pero dirán, ¿entonces por que no compilas loque quieras instalar?.<br /><br />Respuesta simple, por tiempo, estar compilando quita mucho tiempo, por lo que esto de momento queda descartado.<br /><br />Entonces probé varias opciones, buscar todo mediante wget, usando swaret(que es muy bueno), pero al final me recomendaron <a href="http://es.wikipedia.org/wiki/Slapt-get">slapt-get</a>, una herramienta basada en el famoso apt-get de Debian.<br /><br />Una vez instalado y configurado, una maravilla, solo basta con:<br /><blockquote>slapt-get -i postgresql</blockquote><br />e instala absolutamente todo lo necesario, sus dependencias y posibles complementos, por lo que me quede asombrado inicialmente. Mucho mas asombrado quede al probar su opcion de actualizacion de distribucion:<br /><blockquote>slapt-get --dist-upgrade</blockquote><br />todo va correctamente, y sin esfuerzo, ya actualicé mi Slackware.<br /><br />Asi que aqui va como instalar y configurar esta potente herramienta:<br /><ul><li>Descargamos el paquete desde <a href="http://www.linuxpackages.net">linuxpackages</a> slapt-get-xxx.tgz</li></ul><ul><li>Instalamos</li></ul><blockquote>installpkg slapt-get-xxx.tgz<br /></blockquote><ul><li>Ahora configuramos el archivo /etc/slapt-get/slapt-getrc descomentando todas las lineas de contengan nuestra version de Slackware, y alguna superior, en mi caso descomente todas las que contienen Slackware 12 y Slackware 12.1.</li></ul><ul><li>Finalmente ejecutamos</li></ul><blockquote>slapt-get -update<br /></blockquote><br />Todo listo, ya estamos preparados para probar esta utileria.

@@ -1,0 +1,18 @@
+---
+layout: post
+title: Ant and Maven, a brief comparison
+date: '2012-05-23T19:50:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- programming
+- configuration
+- ant
+- build
+- maven
+- software engineering
+modified_time: '2019-08-16T05:45:58.632-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-7184071728390156322
+blogger_orig_url: https://timoponce.blogspot.com/2012/05/ant-and-maven-brief-comparison.html
+---
+
+I've been working for the last three years and during this period of time the projects I've been involved with have the same discussion:<br /><br /><i>which build tool should I use?...and the most common answers were...<a href="http://ant.apache.org/">Ant</a> and <a href="http://maven.apache.org/">Maven </a></i><br /><br />You can check some statistics to see which one is going to rule the market, honestly I think Ant will never leave.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><br />But I must say that there's a very important difference between Ant and Maven, Ant is task-oriented with the possibility of handling project-related configurations. And Maven is project-oriented with the possibility of handling task-related configurations.<br /><br />Considering that, I have these questions that might help you to decide between the right tool:<br /><br /><a href="http://maven.apache.org/">Maven </a><br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><ol><li>Do you need to keep standard project structures?</li><li>Do you want to avoid manual tasks/steps?</li><li>Do your projects have dependencies to another projects/libraries/frameworks?</li><li>Do you have a fairly good Internet connection?</li><li>Do you like to follow the <a href="http://en.wikipedia.org/wiki/Convention_over_configuration">Convention over configuration way</a>?</li></ol><a href="http://ant.apache.org/">Ant</a><br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><ol><li>Do your projects are very different one from another?</li><li>Do your projects have very different structures?</li><li>Do you customize your projects so they behave in a very specific way?</li><li>Do you already have a tight workspace structure that doesn't fit in the Maven world?</li><li>Do you need to have full control over what your projects do?</li></ol>Some of these questions might be incorrect, but those are the ones coming to my head right now, so feel free to use them or not.

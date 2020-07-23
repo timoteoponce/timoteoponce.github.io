@@ -1,0 +1,17 @@
+---
+layout: post
+title: Domain driven semantics
+date: '2012-09-16T21:28:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- patterns
+- best practices
+- design
+- development
+- java
+modified_time: '2019-08-16T05:38:37.950-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-7023705223529237116
+blogger_orig_url: https://timoponce.blogspot.com/2012/09/domain-driven-semantics.html
+---
+
+If you are a programmer, you have dealt with persistence layers in many senses:<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><ul><li><a href="http://en.wikipedia.org/wiki/Relational_database_management_system">RDBMS</a> systems</li><li><a href="http://en.wikipedia.org/wiki/File_system">File systems</a></li><li>Remote storage</li><li>Just memory...</li></ul><div>And if you are a programmer, you know that all those persistence layers have to be abstracted from the application's business logic. There are several techniques to achieve this:</div><div><ul><li><a href="http://en.wikipedia.org/wiki/Data_access_object">Data Access Objects</a></li><li>Mappers</li><li><a href="http://en.wikipedia.org/wiki/Object-relational_mapping">Object Relational Mapping</a></li><li><a href="http://martinfowler.com/bliki/CQRS.html">CQRS pattern</a></li></ul><div>All those techniques wrap your data from the persistence source you are using, because your application should have its own 'language'.</div></div><div><br /></div><div>Why?<br /><br /></div><div>Because each application is meant to solve a specific problem (or a set of problems), and that problem has a domain, and that domain will be used as basis during the development/maintenance&nbsp;phases. During these phases you might have different people working with the same code. So, the developers will need to understand what they are modifying in order to add/remove/fix specific parts of the system.</div><div><br /></div><div>This is the point where documentation and comments become important, I also take a deep look at the context applied to the programming, I mean, class names, attribute identifiers, method names, etc.</div><div><br /></div><div>All these things give the source code a meaning, what can you say from this?</div><div><br /><br /></div><div><script src="https://gist.github.com/3735493.js"> </script></div><div>and what about this?</div><div><br /></div><div><script src="https://gist.github.com/3735501.js"> </script></div><div><br /></div><div>which one is more verbose? which one has more meaning? which one would you prefer to have in your source code?</div><div><br /></div><div>Even though the first chunk of code uses JPA, it is verbose enough, the second one really does its job, you don't need to know whether you are using a database or not and it is really easy to read, if you want to modify a condition or change the behavior you just go to the specific method, and that's it!&nbsp;</div>

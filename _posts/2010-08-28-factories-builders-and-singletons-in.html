@@ -1,0 +1,14 @@
+---
+layout: post
+title: Factories, builders and singletons in standalone applications
+date: '2010-08-28T08:29:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- utilities
+- java
+modified_time: '2010-11-10T08:52:29.666-08:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-2120489942638402242
+blogger_orig_url: https://timoponce.blogspot.com/2010/08/factories-builders-and-singletons-in.html
+---
+
+When I started development, desktop applications were my only target and source of pain. I spent several<br />hours, days, months making things work. When I moved to web-enterprise development, a lot of frameworks save me a lot of time, things like Hibernate, Seam, JMS, Guice.<br /><br />But when I tried to go back to desktop applications, things hadn't changed very much, I still needed to do a lot of work. Then I started emulating some of the best features of Enterprise frameworks for desktop application development.<br /><br />One common problem I've been facing to, it's related to this components:<br /><ul><li>Factories: Delegate object creation and decouple components.</li><li>Builders: Construct complex components from different parts.</li><li>Singletos: Let's face it, in standalone applications are not that bad.</li></ul>I've created a so called 'BaseFactory' component with a Guice-like approach to provide some of the previous features, here it is:<br /><script src="https://gist.github.com/671113.js?file=gistfile1.java"></script>

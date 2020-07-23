@@ -1,0 +1,15 @@
+---
+layout: post
+title: Dead code evilness
+date: '2012-03-02T16:38:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- best practices
+- code
+- java
+modified_time: '2012-03-02T16:45:36.462-08:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-1779359109450661223
+blogger_orig_url: https://timoponce.blogspot.com/2012/03/dead-code-evilness.html
+---
+
+Working on several projects at the same time is really exciting, you have to administer your time-sheet between tasks and work with different people. Hence the diversity, different technologies and environments. <br />But there is something common between all those projects, dead code. Dead code can be classified in some few categories: <br /><ul><li> Legacy code.</li><li> Refactoring-result code.</li><li> Patches.</li></ul>It's really frustrating for someone during development to see some code like this: <br /><br /><script src="https://gist.github.com/1962858.js">  </script> <br /><ul><li>What does the '0' mean? </li><li> Why is the first line still present there as commented code? </li><li> Is it really important to have it there? </li><li> Should I remove it?</li><li> What about the other parameters?</li><li> Why it was commented in first place?</li></ul>&nbsp; This can lead you to several problems if you don't know how to answer these questions. But then again, why would you?  Wouldn't be better to have something like this?:<br /><br /><script src="https://gist.github.com/1962886.js">  </script><br /><br />If it's dead code, I mean, it's already dead, it should be removed for  the sake of other developers. If you are working with Revision  Control Systems (and I don't know why you shouldn't), the commented code is not longer  required, you can revert or reapply a patch whenever you want.<br /><br /><b>In summary, get rid of your dead code, kill it, burn it, bury it.</b>&nbsp; <br /><ul><ul> <br /><br /> </ul></ul>

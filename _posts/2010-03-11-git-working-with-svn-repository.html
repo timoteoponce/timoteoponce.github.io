@@ -1,0 +1,14 @@
+---
+layout: post
+title: GIT - Working with a SVN repository
+date: '2010-03-11T19:11:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- git
+- svn
+modified_time: '2010-03-11T19:11:00.789-08:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-1556136147556315611
+blogger_orig_url: https://timoponce.blogspot.com/2010/03/git-working-with-svn-repository.html
+---
+
+Git a SCM created by Linus Torvalds and currently mantained by Junio Hamano, is a distributed revision control system very simple and extremely powerful.<br /><br />For those people who want to test this system (me included), and comes from a SVN environment, there are some utilities (included with GIT) to interact with SVN repositories.<br /><br />In my case, I have a copy of a project fetched from the SVN repository, and for local development I use a branch called 'development'. When the development branch is stable, I merge this branch with the branch 'master', and then commit the changes to the SVN repository.<br /><br />- Create and fetch from SVN repository<br /><pre name="code" class="py">git svn init https://localhost/dev/svn/tiergen<br />git svn fetch -r HEAD<br /></pre>- Create a 'development' branch and start working with it.<br /><pre name="code" class="py">git branch development<br />git checkout development<br /></pre>- After all changes are made in the development branch, let's merge thi with 'master'.<br /><pre name="code" class="py">git checkout master<br />git merge development<br /></pre>- Finally, commit everything to the SVN repository.<br /><pre name="code" class="py">git svn rebase # I always do this<br />git dcommit<br /></pre>

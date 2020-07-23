@@ -1,0 +1,16 @@
+---
+layout: post
+title: Supporting short lived objects
+date: '2012-01-24T12:20:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- object
+- design
+- code
+- development
+modified_time: '2019-08-16T05:47:45.709-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-1978562750246691042
+blogger_orig_url: https://timoponce.blogspot.com/2012/01/supporting-short-lived-objects.html
+---
+
+While working on some projects with different environments and behaviors, I started liking the notion of short-lived objects. Besides, I read a lot in several threads from StackOverflow &gt; <a href="http://stackoverflow.com/questions/631919/short-lived-objects">http://stackoverflow.com/questions/631919/short-lived-objects</a>.<br /><div class="separator" style="clear: both; text-align: center;"></div><br /><br />I like this kind of objects because they are easy to control, debug, update, delete. The notion of having an long living object is state, but to keep that state among several instances and requests can be a real hell if you don't control it properly.<br /><br />And as you may guess, concurrency is one of the things I don't like to deal with, I prefer to leave it to a framework or third-party concurrency manager.<br /><br />Benefits:<br /><ul><li>Easy to control</li><li>Easy to code</li><li>Easy to test</li><li>Challenges your design skills</li><li>Avoids singleton all over the place</li><li>It enhances performance&nbsp; </li></ul>Drawbacks:<br /><ul><li>If you don't control them, you can have an big object pool</li><li>You have to take care of references and garbage collection</li><li>If your design is bad, your objects will be bad as well.</li></ul>

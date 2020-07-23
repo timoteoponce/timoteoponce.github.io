@@ -1,0 +1,13 @@
+---
+layout: post
+title: Debugger usage as bad smell?
+date: '2019-06-05T08:19:00.000-07:00'
+author: Timoteo Ponce
+tags:
+modified_time: '2019-06-05T08:19:19.225-07:00'
+thumbnail: https://1.bp.blogspot.com/-y7Woyyd5rrQ/XPfdN8Ia9WI/AAAAAAAAIFk/mWs4D0Byet4kA8XPN4ZS7QYMbJ81FX5zgCLcBGAs/s72-c/0.jpg
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-3370107434902781135
+blogger_orig_url: https://timoponce.blogspot.com/2019/06/debugger-usage-as-bad-smell.html
+---
+
+<div class="separator" style="clear: both; text-align: center;"><a href="https://1.bp.blogspot.com/-y7Woyyd5rrQ/XPfdN8Ia9WI/AAAAAAAAIFk/mWs4D0Byet4kA8XPN4ZS7QYMbJ81FX5zgCLcBGAs/s1600/0.jpg" style="margin-left: 1em; margin-right: 1em;"><img border="0" data-original-height="400" data-original-width="698" height="183" src="https://1.bp.blogspot.com/-y7Woyyd5rrQ/XPfdN8Ia9WI/AAAAAAAAIFk/mWs4D0Byet4kA8XPN4ZS7QYMbJ81FX5zgCLcBGAs/s320/0.jpg" width="320" /></a></div><br />A lot of times development is not straightforward, you hit a corner and don't know what else to do to fix a problem. During those periods I've seen many developers do the following things:<br /><ol><li>Start the debugger right away and go step by step into the problem</li><li>Sketch all possible scenarios that would lead to the problem, then println-debug each scenario</li><li>Take a walk for 10 mins to think about the problem</li></ol>&nbsp;While all these approaches have worked for me, I tend to ignore the debugger use more and more over time. The reason for it can be summarized as:<br /><br /><i>&nbsp;&nbsp; "By using a debugger, I'm always avoiding to first understand the problem, but instead patching it with a single-scenario fix"</i><br /><br />In the past I've used debuggers a lot, starting it as soon as some problem arose. But then a pattern started to show up,&nbsp; fixes were coming back with other problems that the first fix didn't cover.<br /><br />It took a while to understand this and slowly move away from debuggers, it all started when some production applications started to fail, and we didn't have the chance to debug in such environment, we just had the logs.<br /><br />Reading the code, checking the possible inputs and flows, creating a test case (hopefully automated) and then attempting different fixes resulted in more consistent patches, fewer round-trips with the customers and higher efficiency in the team.<br /><br />So, whenever someone's starting to fix a bug, my first instinct is to try to create a test case that reproduces the problem before firing up the debugger gun.<br /><ol></ol>

@@ -1,0 +1,18 @@
+---
+layout: post
+title: Servidor Apache en Slackware 12
+date: '2008-03-17T08:44:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- mysql
+- httpd
+- apache
+- configuracion
+- slackware
+- php
+modified_time: '2008-03-17T09:21:29.520-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-724852121103634764
+blogger_orig_url: https://timoponce.blogspot.com/2008/03/servidor-apache-en-slackware-12.html
+---
+
+Para algunos que nos mudamos de versiones anteriores, en el changelog de Slackware 12 nos indican que <a href="http://www.blogger.com/www.apache.org">Apache</a> pasa a llamarse httpd, debido a convenciones.<br /><br />Como sabemos, tanto los paquetes de <a href="http://www.blogger.com/www.apache.org">Apache</a>, como los de <a href="http://www.blogger.com/www.php.net">PHP</a> y <a href="http://www.blogger.com/www.mysql.com">Mysql</a> vienen incluidos por defecto en nuestra amada distro, asi que, ¿cómo usarlos?.<br /><br />Primero, para iniciar <a href="http://www.blogger.com/www.apache.org">Apache</a> tenemos dos caminos:<br /><br /><blockquote>apachectl start</blockquote><br /><br />ó, simplemente damos permisos de ejecución a nuestro archivo de servicio:<br /><br /><blockquote>chmod +x /etc/rc.d/rc.httpd</blockquote><br /><br />luego<br /><br /><blockquote>/etc/rc.d/rc.httpd start</blockquote><br /><br />Por supuesto que ambas formas soportan las opciones "start | stop | restart", por lo que no habrá ningún problema. Por defecto el directorio root de Apache esta en<br /><br /><blockquote>/var/www/htdocs</blockquote><br /><br />para cambiarlo, editamos el archivo de configuración<br /><br /><blockquote>/etc/httpd/httpd.conf</blockquote><br /><br />Bien, ahora activamos el soporte para <a href="http://www.blogger.com/www.php.net">PHP</a>, en el fichero anterior, descomentamos<br /><br /><blockquote>Include /etc/httpd/mod_php.conf</blockquote><br /><br />y reiniciamos el servidor, todo listo.<br /><br />Para probar, en nuestro navegador por defecto, dirigimos la URL<br /><br /><blockquote>http://localhost</blockquote><br /><br />ó<br /><br /><blockquote>http://localhost:80</blockquote>

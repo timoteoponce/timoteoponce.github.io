@@ -1,0 +1,14 @@
+---
+layout: post
+title: External merge-diff - Git on windows
+date: '2010-05-04T19:40:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- windows
+- git
+modified_time: '2010-05-04T19:45:06.484-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-6589943160294669422
+blogger_orig_url: https://timoponce.blogspot.com/2010/05/external-merge-diff-git-on-windows.html
+---
+
+To configure and use <a href="http://git-scm.com/">Git</a> in a Linux environment is quite easy, but if you are working in a Windows system, things get a little bit complicated.<br /><br />I use <a href="http://code.google.com/p/msysgit/">MsysGit</a> which is a great port to win32, and as a merge/diff tool I use <a href="http://winmerge.org/">WinMerge</a> (I can't stand KDiff); to work with WinMerge as 'difftool' and 'mergetool' you could do this:<br /><br />- First, create a wrapper script for our 'difftool', save this file as 'diff-tool.sh' in your $HOME folder:<br /><br /><pre class="py" name="code">#!/bin/sh<br /># Change "E:/bin/WinMerge/WinMergeU.exe" with your winmerge path<br />"E:/bin/WinMerge/WinMergeU.exe" -e -ub "$1" "$2" | cat<br /></pre><br />- Now, edit your $HOME/.gitconfig file, you can take as example my current configuration:<br /><pre class="py" name="code">[core] <br />autocrlf = false <br /><br />[alias]<br />lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset' --abbrev-commit --date=relative<br /><br />[user]<br />name = Timoteo Ponce<br />email = timo.slack@gmail.com<br /><br />[merge]<br />tool = winmerge<br /><br />[mergetool "winmerge"]<br />cmd = "E:/bin/WinMerge/WinMergeU.exe" "$MERGED"<br />keepBackup = false<br /><br />[diff]<br />tool = winmerge<br /><br />[difftool "winmerge"]<br />cmd = $HOME/diffmerge-tool.sh "$LOCAL" "$REMOTE"<br /></pre>

@@ -1,0 +1,18 @@
+---
+layout: post
+title: 'Configuracion de routers: Recuperacion del IOS'
+date: '2008-01-30T14:37:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- informatica
+- ios
+- routers
+- tftp
+- redes
+- restore
+modified_time: '2008-09-02T14:04:53.475-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-6035056856041494348
+blogger_orig_url: https://timoponce.blogspot.com/2008/01/configuracion-de-routers-recuperacion.html
+---
+
+Todos aquellos curiosos o administradores de redes, en algun momento, deben manipular y administrar router's.<br /><br />Llega algun momento, que, por alguna circunstancia, borramos el IOS(Sistema Operativo) del mismo, incluso de la memoria residente.<br /><br />El asunto es, ¿que hacer?. Debido a que el software es propietario, es ilegal descargarlo, por lo que solo existe una solucion:<br /><br />* Copiar desde otro router(funcional) el IOS hacia nuestro dispositivo victima.<br /><br />La forma correcta de hacerlo es mediante un host intermedio, el cual puede ser una PC. Mediante un servidor TFTP, podemos copiar el sistema del router en buen estado, y pasarlo hacia el dispositvo 'vacio'.<br /><br />Se puede usar el <a href="http://perso.wanadoo.fr/philippe.jounin/tftpd32.html">TFTPd32</a> , conectar nuestro router mediante un cable ethernet inverso, se ejecuta:<br /><br /># copy c2600.xx.bin tftp://192.168.1.15<br /><br />por ejemplo, asi ya tenemos copiado el IOS en nuestra PC, ahora para pasarlo hacia el dispositivo vacio, nos valemos de su ROMmon mode, colocando las direcciones mediante:<br /><br />#set IP_ADDRESS=192.168.1.16<br /><br />y los demas restantes, entonces<br /><br />#set <small>TFTP_FILE=</small>c2600.xx.bin<br /><br />y listo, al reiniciar iniciamos el wizard correspondiente.<br /><br />Para resumir, aca un comprimido con las guias y una imagen para el router Cisco 2600:<br /><ul><li>Comprimido con guias e imagen IOS -> <a href="http://www.gigasize.com/get.php?d=lrz2sf83r9b">Restore IOS</a><br /></li><li>Ruta de descargar del servidor tftp -> <a href="http://perso.wanadoo.fr/philippe.jounin/tftpd32.html">TFTPd32</a></li></ul>

@@ -1,0 +1,16 @@
+---
+layout: post
+title: Software Architecture, lessons learned
+date: '2011-11-04T20:28:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- patterns
+- design
+- development
+- software engineering
+modified_time: '2019-08-16T05:48:12.949-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-8415713467283942431
+blogger_orig_url: https://timoponce.blogspot.com/2011/11/software-architecture-lessons-learned.html
+---
+
+There are very good developers, that can create great products out of nowhere without thinking too much. Well, I'm not one of those, it takes me a while to get the right idea, and several times I had to throw everything I've bee working on and start from scratch.<br /><br />But even in situations like these, there are some things you learn from time to time.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><h3>   Minimalism </h3>This is something I learned from Robert Martin's Clean Code (but I think it just takes common sense). When your components are not meaningful and don't relate to each other in an almost 'natural' way, you need to refactor it. Your system might work beautifully, but your internal structure is a mess and it will create problems to future maintainers.<br /><br /><h3>   Keep it simple </h3>Complex design leads to complex code, complex code leads to complex tests, and the mess has now started. The design has to be as simplest as possible, and your code has to be consequent to this. And by code I mean production code and the test units related, because that it's maintainable code too!.  Check <a href="http://en.wikipedia.org/wiki/KISS_principle">KISS Principle on Wikipedia.</a><br />&nbsp; <br /><h3>   Life time</h3>System components and inner objects must follow the natural law, die. While shorter your objects live the better, are easier to handle, to test, and to refactor. Including memory usage improvements, as your objects are created and dropped as soon as they are used.  This is something I find very useful, and I discovered by playing around with <a href="http://code.google.com/p/google-guice/">Google's Guice project</a>.<br /><br /><h3>   Patterns</h3>Check the patterns once a while, review your architecture, don't reinvent the wheel. There are several good references for it, but I tend to enjoy <a href="http://www.martinfowler.com/">Martin Fowler's</a> patterns (and the articles describing them).   Have a look at the <a href="http://martinfowler.com/articles/lmax.html">LMAX architecture</a>.

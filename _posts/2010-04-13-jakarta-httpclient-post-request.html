@@ -1,0 +1,15 @@
+---
+layout: post
+title: Jakarta HttpClient , POST request
+date: '2010-04-13T13:09:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- post
+- httpd
+- java
+modified_time: '2010-04-13T13:12:58.239-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-7045130567240957728
+blogger_orig_url: https://timoponce.blogspot.com/2010/04/jakarta-httpclient-post-request.html
+---
+
+This library contains a set of very handy utilities for HTTP interaction, in this occasion, I'll show you how to create a POST request:<br /><br /><pre class="java" name="code">final String url = "http://localhost:8080/eco/management"<br />public void sendRequest(Map&lt;String, String&gt; parameters) throws DigestException,   HttpException, IOException {<br />        println("Sending request to : " + url);<br />        HttpClient httpClient = new HttpClient();<br />        PostMethod method = new PostMethod(url);<br /><br />        for (Entry&lt;String,String&gt; entry : parameters.entrySet()) {<br />            method.addParameter(entry.getKey(), entry.getValue());<br />        }<br />        final int status = httpClient.executeMethod(method);<br /><br />        if (status == HttpStatus.SC_OK) {<br />            println("Request successfully processed");<br />            println("Response : " + new String(method.getResponseBody()));<br />        }<br />    }<br /></pre>

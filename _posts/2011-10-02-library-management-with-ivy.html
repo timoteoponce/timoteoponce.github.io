@@ -1,0 +1,15 @@
+---
+layout: post
+title: Library management with Ivy
+date: '2011-10-02T20:09:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- configuration
+- dependency
+- ant
+modified_time: '2019-08-16T05:48:34.911-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-731117404409833161
+blogger_orig_url: https://timoponce.blogspot.com/2011/10/library-management-with-ivy.html
+---
+
+Back in the day, when I was a child, I used to manage all my project's libraries by hand, copying and moving everything I needed for a project into its respective folder.<br /><br />I was happy with this for some time, but then I had to scale, handle several projects with a mixed set of dependencies. My original idea was to use a grown up tool like Maven, but its XML-hell led me out of it.<br /><br /><div class="separator" style="clear: both; text-align: center;"></div><br /><br />The alternative I chose is <a href="http://ant.apache.org/ivy/">Apache Ivy</a>, a dependency management tool that only does dependency management, and it's highly configurable (if you do it right).<br /><br />In this way you can keep several projects linking a common libraries repository that is entirely handled by <a href="http://ant.apache.org/ivy/">Ivy</a>, you just configure it.<br /><br />I recently updated some of my projects to this, the configuration files are quite simple and do all the work, including the Ivy-ant task installation if not available.<br /><br /><span style="font-size: large;">Ivy configurations for my Paginator-project</span><br /><ul><li> <a href="https://github.com/timoteoponce/paginator/blob/master/build-ivy.xml">build-ivy.xml</a></li><li><a href="https://github.com/timoteoponce/paginator/blob/master/ivy.xml">ivy.xml</a></li><li><a href="https://github.com/timoteoponce/paginator/blob/master/ivysettings.xml">ivysettings.xml</a></li><li><a href="https://github.com/timoteoponce/paginator/blob/master/metrics.xml">metrics.xml</a></li></ul><br /><span style="font-size: large;">References</span><br /><ul><li><a href="http://www.beilers.com/2010/06/ivy-dependency-management-lessons-learned-and-ant-1-8-mapped-resources/">http://www.beilers.com/2010/06/ivy-dependency-management-lessons-learned-and-ant-1-8-mapped-resources/</a></li><li><a href="http://blogs.steeplesoft.com/2008/01/dependency-management-with-ant-and-ivy/">http://blogs.steeplesoft.com/2008/01/dependency-management-with-ant-and-ivy/</a></li></ul>

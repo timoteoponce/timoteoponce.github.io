@@ -1,0 +1,16 @@
+---
+layout: post
+title: Problems installing Rails
+date: '2010-11-27T09:11:00.000-08:00'
+author: Timoteo Ponce
+tags:
+- problem
+- rails
+- linux
+- gem
+modified_time: '2010-11-27T09:11:12.731-08:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-8304213555988406362
+blogger_orig_url: https://timoponce.blogspot.com/2010/11/problems-installing-rails.html
+---
+
+When you are trying to install Rails via Gem, you will have this exception:<br /><blockquote># gem install rails <br />ERROR:&nbsp; While executing gem ... (Errno::ENOENT)<br />&nbsp;&nbsp;&nbsp; No such file or directory - lib</blockquote><br />To solve it, the solution is pretty obvious, create 'lib' folder:<br /><blockquote>&nbsp;# mkdir /usr/lib/ruby/gems/1.9.1/gems/rails-3.0.3/lib</blockquote><br />Then execute the first command again, and done.

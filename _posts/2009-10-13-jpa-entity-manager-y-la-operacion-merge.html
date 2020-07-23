@@ -1,0 +1,14 @@
+---
+layout: post
+title: JPA Entity Manager y la operación 'merge'
+date: '2009-10-13T05:49:00.001-07:00'
+author: Timoteo Ponce
+tags:
+- jpa
+- orm
+modified_time: '2009-10-18T15:05:11.408-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-3425999456442179969
+blogger_orig_url: https://timoponce.blogspot.com/2009/10/jpa-entity-manager-y-la-operacion-merge.html
+---
+
+Durante el desarrollo de un proyecto, nos encontramos con el problema de que muchas actualizaciones que se realizaban a entidades (JPA) no se escribían en la base de datos. Revisando el log de Hibernate, encontramos que muchas veces la operación &#39;merge&#39; solamente ejecutaba una selección de datos, y no asi su modificacion. <div><br></div><div>Revisando encontramos la siguiente referencia en el libro &#39;Seam in action&#39; :</div><blockquote class="gmail_quote" style="margin-top: 0px; margin-right: 0px; margin-bottom: 0px; margin-left: 0.8ex; border-left-width: 1px; border-left-color: rgb(204, 204, 204); border-left-style: solid; padding-left: 1ex; "> Merging is a crude operation and should be avoided if possible</blockquote><div>Además el mismo autor recomienda hacer uso de las operaciones &#39;flush&#39; y &#39;refresh&#39; para actualizar datos o deshacer cambios. Esto nos salvo muchos problemas, ademas de habernos aclarado algunas dudas, ojala les sea útil. </div>

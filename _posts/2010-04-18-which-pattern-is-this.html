@@ -1,0 +1,14 @@
+---
+layout: post
+title: Which pattern is this?
+date: '2010-04-18T19:50:00.000-07:00'
+author: Timoteo Ponce
+tags:
+- patterns
+- java
+modified_time: '2010-04-18T19:51:55.350-07:00'
+blogger_id: tag:blogger.com,1999:blog-5502681789285906166.post-6181546784987625795
+blogger_orig_url: https://timoponce.blogspot.com/2010/04/which-pattern-is-this.html
+---
+
+I've been working in a component with some singularities, one of them is his incremental behavior. To make it clear: When a feature is almost complete (or completed), some other features arise.<br /><br />This is really annoying if you have implemented everything for an specific use (never do this, I've learned in the bad way) if needs to be changed to work with the new stuff.<br /><br />One of the things that I needed to do is to create/fill/validate different objects; I started thinking: "This is easy, let's do a mapper for each one of them". So far so good, then another type of object to work with.... shit, create more mappers, modify logic...<br /><br />I started thinking "I'm doing this over and over, why am I so stupid?, use interfaces, builders, factories, simplify the problem... moron". I realized that the validation/filling... logic was the same, so the things that are different&nbsp; needed to be isolated: the mappers (I don't know the real name).<br /><br />With a little of work, I did this:<br /><pre class="java" name="code">public interface Initializer&lt;Source,Target&gt;{<br />&nbsp; &nbsp;&nbsp; // initializes the Target object using the Source as data provider <br />&nbsp;&nbsp;&nbsp;&nbsp; Target initializeThis(Source source, Target reference);<br />}<br /></pre>Then my object creator is:<br /><pre class="java" name="code">public class ObjectCreator&lt;Car&gt; implements Creator{<br />&nbsp;&nbsp;&nbsp; public Car prepareObject(){<br />&nbsp; &nbsp;&nbsp;&nbsp; &nbsp; Info info= readInfo();<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Initializer init = InitializerFactory.newInitializer(Car.class,Info.class);<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return init.initializeThis(new Car(),info);&nbsp; &nbsp; &nbsp; &nbsp; <br />&nbsp;&nbsp;&nbsp; }<br />}<br /></pre>The logic doesn't changes, just use the proper Creator, and that's it. But I don't really know if this is a pattern, or an anti-pattern, or whatever.
