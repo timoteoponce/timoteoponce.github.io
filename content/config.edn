@@ -1,7 +1,7 @@
-{:site-title                   "My Awesome Blog"
- :author                       "Bob Bobbert"
- :description                  "This blog is awesome"
- :site-url                     "http://blogawesome.com/"
+{:site-title                   "Timo's blog"
+ :author                       "Timoteo Ponce"
+ :description                  "Writing things because I'm bad at remembering"
+ :site-url                     "https://timoteoponce.github.io/"
  :post-root                    "posts"
  :page-root                    "pages"
  :post-root-uri                "posts-output"
@@ -17,14 +17,14 @@
  :archive-group-format         "yyyy MMMM"
  :sass-src                     []
  :sass-path                    "sass"
- :theme                        "blue"
+ :theme                        "nucleus"
  :resources                    ["img"]
  :keep-files                   [".git"]
  :disqus?                      false
  :disqus-shortname             ""
  :ignored-files                [#"\.#.*" #".*\.swp$"]
- :previews?                    false
- :posts-per-page               5
+ :previews?                    true
+ :posts-per-page               10
  :blocks-per-preview           2
  :clean-urls                   :trailing-slash
  :collapse-subdirs?            false
